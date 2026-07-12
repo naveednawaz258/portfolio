@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 :root{
     --bg-color:#081b29;
+    --mid-bg:#0c2336;
     --second-bg:#112e42;
     --card-bg:rgba(255,255,255,.05);
     --primary:#00abf0;
@@ -18,7 +19,12 @@
 html{scroll-behavior:smooth;}
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#081b29,#0c2336,#112e42);
+    background:linear-gradient(
+    180deg,
+    var(--bg-color),
+    var(--mid-bg),
+    var(--second-bg)
+);
     color:var(--text);
     overflow-x:hidden;
     line-height:1.7;
