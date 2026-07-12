@@ -526,3 +526,84 @@ footer{
         position: static;
     }
 }
+/* ===================================
+   Background Theme Switcher
+=================================== */
+
+.theme-switcher{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:1000;
+}
+
+#theme-toggle{
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:#00abf0;
+    color:white;
+    cursor:pointer;
+    font-size:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    transition:.3s;
+}
+
+#theme-toggle:hover{
+    transform:scale(1.1);
+}
+
+.theme-colors{
+    position:absolute;
+    bottom:75px;
+    right:0;
+    display:none;
+    flex-direction:column;
+    gap:12px;
+    padding:12px;
+    background:rgba(17,46,66,.95);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.theme-colors.show{
+    display:flex;
+}
+
+.theme-circle{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    border:2px solid white;
+    transition:.3s;
+}
+
+.theme-circle:hover{
+    transform:scale(1.15);
+}
+
+/* Theme Colors */
+
+.ocean{
+    background:#081b29;
+}
+
+.black{
+    background:#0a0a0a;
+}
+
+.purple{
+    background:#2d1b4e;
+}
+
+.gray{
+    background:#374151;
+}
+
+.navy{
+    background:#1b2442;
+}
