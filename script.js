@@ -200,11 +200,9 @@ themeCircles.forEach(circle => {
 
         const theme = themes[circle.dataset.theme];
 
-        document.body.style.background =
-            `linear-gradient(180deg,
-            ${theme.bg},
-            ${theme.mid},
-            ${theme.second})`;
+        document.documentElement.style.setProperty("--bg-color", theme.bg);
+document.documentElement.style.setProperty("--mid-bg", theme.mid);
+document.documentElement.style.setProperty("--second-bg", theme.second);
 
         // Save Theme
         localStorage.setItem("portfolioTheme", circle.dataset.theme);
@@ -222,11 +220,9 @@ if (savedTheme && themes[savedTheme]) {
 
     const theme = themes[savedTheme];
 
-    document.body.style.background =
-        `linear-gradient(180deg,
-        ${theme.bg},
-        ${theme.mid},
-        ${theme.second})`;
+    document.documentElement.style.setProperty("--bg-color", theme.bg);
+document.documentElement.style.setProperty("--mid-bg", theme.mid);
+document.documentElement.style.setProperty("--second-bg", theme.second);
 
 }
 
