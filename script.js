@@ -144,3 +144,100 @@ function type() {
 }
 
 type();
+// ==========================
+// Background Theme Switcher
+// ==========================
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeColors = document.getElementById("theme-colors");
+const themeCircles = document.querySelectorAll(".theme-circle");
+
+// Open / Close Theme Panel
+themeToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    themeColors.classList.toggle("show");
+});
+
+// Background Themes
+const themes = {
+
+    ocean: {
+        bg: "#081b29",
+        mid: "#0c2336",
+        second: "#112e42"
+    },
+
+    black: {
+        bg: "#0a0a0a",
+        mid: "#151515",
+        second: "#1f1f1f"
+    },
+
+    purple: {
+        bg: "#1b1033",
+        mid: "#241544",
+        second: "#2d1b4e"
+    },
+
+    gray: {
+        bg: "#111827",
+        mid: "#18212f",
+        second: "#1f2937"
+    },
+
+    navy: {
+        bg: "#0b1026",
+        mid: "#121a33",
+        second: "#1b2442"
+    }
+
+};
+
+// Change Background
+themeCircles.forEach(circle => {
+
+    circle.addEventListener("click", () => {
+
+        const theme = themes[circle.dataset.theme];
+
+        document.body.style.background =
+            `linear-gradient(180deg,
+            ${theme.bg},
+            ${theme.mid},
+            ${theme.second})`;
+
+        // Save Theme
+        localStorage.setItem("portfolioTheme", circle.dataset.theme);
+
+        themeColors.classList.remove("show");
+
+    });
+
+});
+
+// Load Saved Theme
+const savedTheme = localStorage.getItem("portfolioTheme");
+
+if (savedTheme && themes[savedTheme]) {
+
+    const theme = themes[savedTheme];
+
+    document.body.style.background =
+        `linear-gradient(180deg,
+        ${theme.bg},
+        ${theme.mid},
+        ${theme.second})`;
+
+}
+
+// Close Panel When Clicking Outside
+document.addEventListener("click", (e) => {
+
+    if (
+        !themeToggle.contains(e.target) &&
+        !themeColors.contains(e.target)
+    ) {
+        themeColors.classList.remove("show");
+    }
+
+});
