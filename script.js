@@ -232,7 +232,7 @@ document.addEventListener("click", (e) => {
     if (
         !themeToggle.contains(e.target) &&
         !themeColors.contains(e.target)
-    )
+    ){
         themeColors.classList.remove("show");
-
+    }
 });
