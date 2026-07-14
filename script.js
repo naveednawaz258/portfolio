@@ -196,7 +196,8 @@ const themes = {
 // Change Background
 themeCircles.forEach(circle => {
 
-    circle.addEventListener("click", () => {
+    circle.addEventListener("click", (e) => {
+        e.stopPropagation();
 
         const theme = themes[circle.dataset.theme];
 
