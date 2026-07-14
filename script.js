@@ -208,7 +208,6 @@ document.documentElement.style.setProperty("--second-bg", theme.second);
         // Save Theme
         localStorage.setItem("portfolioTheme", circle.dataset.theme);
 
-
     });
 
 });
