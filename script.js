@@ -233,5 +233,6 @@ document.addEventListener("click", (e) => {
         !themeToggle.contains(e.target) &&
         !themeColors.contains(e.target)
     )
+        themeColors.classList.remove("show");
 
 });
