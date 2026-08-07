@@ -85,13 +85,29 @@ header{
     gap:35px;
 }
 .nav-links a{
+    position:relative;
     color:var(--light-text);
     font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--primary);
     transition:.3s;
 }
 .nav-links a:hover,
 .nav-links a.active{
     color:var(--primary);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
 }
 .hire-btn{
     padding:12px 28px;
@@ -147,13 +163,16 @@ header{
 }
 .primary:hover{
     background:var(--primary-hover);
-    transform:translateY(-5px);
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 15px 30px rgba(0,171,240,.35);
 }
 .secondary{
     border:2px solid var(--primary);
 }
 .secondary:hover{
     background:var(--primary);
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 15px 30px rgba(0,171,240,.35);
 }
 .social-icons{
     display:flex;
@@ -173,7 +192,9 @@ header{
 }
 .social-icons a:hover{
     background:var(--primary);
-    transform:translateY(-6px);
+    color:#fff;
+    transform:translateY(-8px) rotate(8deg) scale(1.1);
+    box-shadow:0 15px 30px rgba(0,171,240,.4);
 }
 .developer-card{
     background:rgba(255,255,255,.08);
@@ -247,7 +268,8 @@ header{
     transition:.3s;
 }
 .info-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 45px rgba(0,0,0,.45);
 }
 .info-card i{
     color:var(--primary);
@@ -272,7 +294,8 @@ header{
     transition:.3s;
 }
 .skill-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 45px rgba(0,0,0,.45);
 }
 .skill-card i{
     color:var(--primary);
@@ -299,7 +322,8 @@ header{
     transition:.3s;
 }
 .project-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 45px rgba(0,0,0,.45);
 }
 .project-icon{
     width:65px;
@@ -389,7 +413,8 @@ header{
     transition:.3s;
 }
 .contact-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 45px rgba(0,0,0,.45);
 }
 .contact-card i{
     color:var(--primary);
